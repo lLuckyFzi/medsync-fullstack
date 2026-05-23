@@ -34,3 +34,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Prisma Code
+`npm install prisma@5 @prisma/client@5` installing the lower version of prisma, so i can connect mysql easly in schema.prisma, not inthe prisma.config.ts (for prisma 7)
+`npx prisma studio` To start the Prisma Studio database manager
+`npx prisma init` For initialization. NOTES: Use this only in the first time to create folder `prisma`
+`npx prisma db push` To push all the schema to the mysql table.
