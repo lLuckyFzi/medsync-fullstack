@@ -2,13 +2,16 @@
 
 import { Input, Badge, Avatar } from 'antd';
 import { SearchOutlined, BellFilled } from '@ant-design/icons';
+import { useAuth } from '@/providers/AuthProvider';
 
 export default function Header() {
+    const { user } = useAuth();
+
     return (
         <header className="w-full flex items-center justify-between mb-4">
             <div>
                 <h1 className="text-3xl font-extrabold text-slate-800 tracking-tight">
-                    Hello, Patient!
+                    Hello, {user?.name || 'Patient'}!
                 </h1>
                 <p className="text-slate-500 mt-1 text-sm font-medium">
                     Here is your daily health overview and schedule.
@@ -32,7 +35,9 @@ export default function Header() {
 
                 <div className="flex items-center gap-3 pl-4 border-l border-slate-200 cursor-pointer group">
                     <div className="text-right hidden md:block">
-                        <p className="text-sm font-bold text-slate-700 group-hover:text-teal-600 transition-colors">Lucky Fauzi</p>
+                        <p className="text-sm font-bold text-slate-700 group-hover:text-teal-600 transition-colors">
+                            {user?.name || 'Patient'}
+                        </p>
                         <p className="text-xs text-slate-400 font-medium">Patient</p>
                     </div>
                     <Avatar

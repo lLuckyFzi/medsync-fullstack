@@ -35,3 +35,8 @@ body {
   background: #334155;
   border-radius: 10px;
 }
+
+.ant-modal-container {
+  padding: 0 !important;
+  border: none !important;
+}
